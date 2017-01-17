@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Ejemplo de JavaScript Empresa</title>
+
+    <script type="text/javascript">
+
+        function Empresa(nom, dir){
+
+            this.nombre = nom;
+
+            this.direccion = dir;
+
+
+            this.mostrarDatos = function(){
+
+                var cadena = "La empresa "+ this.nombre +" que está en "+this.direccion+".";
+
+                return cadena;
+
+            }
+
+        }
+
+
+        var empresa_1 = new empresa("Martinez y asociados", "Calle Rios rosas, nº3");
+
+        var empresa_2 = new empresa("Carnes de Ávila", "Calle mares naranjas, nº9");
+
+
+        function empleado(nom, ape, eda, pue, emp)
+
+        {
+
+            this.nombre = nom;
+
+            this.apellido = ape;
+
+            this.edad = eda;
+
+            this.puesto = pue;
+
+            this.empresa = emp;
+
+            this.mostrardatos = function(){
+
+                return("El empleado "+this.nombre+" "+this.apellido+" que trabaja como "+this.puesto+". Tiene "+this.edad+" años y trabaja en "+this.empresa.mostrardatos());
+
+            }
+
+        }
+
+        var empleado_1 = new empleado("Carlos", "Martinez", 27, "Consultor", empresa_1);
+
+        var empleado_2 = new empleado("Alfonso", "Muñoz", 36, "Jefe de sección", empresa_2);
+    </script>
+
+
+</head>
+ 
+<body>
+<h1>Ejemplo tabla mostrar datos empresa con OnClick</h1>
+
+<!--Tabla para Javascript-->
+<PRE>
+<table border=1px>
+                <tr>
+                	<td><strong>Nombre</strong></td>
+                    <td><strong>Puesto</strong></td>
+                    <td><strong>Empresa</strong></td>
+                    <td><strong>Acci&oacuten javascript</strong></td>
+                </tr>
+                <tr>
+                	<td>Carlos Mart&iacutenez</td>
+                    <td>Consultor</td>
+                    <td><a href=# onClick="alert(empresa_1.mostrarDatos());">Mart&iacutenez y asociados</a></td>
+                    <td><a href=# onClick="alert(empleado_1.mostrarDatos());">Mostrar info del empleado</a></td>
+                </tr>
+                <tr>
+                	<td>Alfonso Mu&ntildeoz</td>
+                    <td>Jefe de secci&oacuten</td>
+                    <td><a href=# onClick="alert(empresa_2.mostrarDatos());">Carnes de &Aacutevila</a></td>
+                    <td><a href=# onClick="alert(empleado_2.mostrarDatos());">Mostrar info del empleado</a></td>
+                </tr>
+            </table>
+</PRE>
+</body>
+</html>
